@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean Wee — Portfolio</title>
+    <meta name="description" content="Sean Wee's interactive desktop portfolio — Full Stack Developer, Y2 NTU Singapore">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="assets/profile.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div class="wallpaper">
+            <img src="assets/wallpaper.jpg" alt="" class="wallpaper__image" draggable="false">
+        </div>
+
+        <div id="windows-container"></div>
+
+        <div class="start-menu" id="start-menu">
+            <div class="start-menu__search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="text" placeholderz="Type here to search" class="start-menu__search-input" readonly>
+            </div>
+
+            <div class="start-menu__section">
+                <div class="start-menu__section-header">
+                    <span>Pinned</span>
+                </div>
+                <div class="start-menu__grid">
+                    <button class="start-menu__app" data-app="terminal">
+                        <div class="start-menu__app-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                                <path d="M13 32L21 24L13 16" stroke="#a6e3a1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="23" y1="32" x2="35" y2="32" stroke="#6c7086" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span>Terminal</span>
+                    </button>
+                    <button class="start-menu__app" data-app="about">
+                        <div class="start-menu__app-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                                <circle cx="24" cy="19" r="7" stroke="#89b4fa" stroke-width="2" fill="none"/>
+                                <path d="M13 38c0-6.075 4.925-11 11-11s11 6.075 11 11" stroke="#89b4fa" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <span>About Me</span>
+                    </button>
+                    <button class="start-menu__app" data-app="skills">
+                        <div class="start-menu__app-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                                <text x="24" y="30" text-anchor="middle" fill="#cba6f7" font-family="JetBrains Mono, monospace" font-size="16" font-weight="600">&lt;/&gt;</text>
+                            </svg>
+                        </div>
+                        <span>Skills</span>
+                    </button>
+                    <button class="start-menu__app" data-app="projects">
+                        <div class="start-menu__app-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                                <path d="M12 20V17a3 3 0 013-3h7l3 3h12a3 3 0 013 3v14a3 3 0 01-3 3H15a3 3 0 01-3-3V20z" stroke="#fab387" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <span>Projects</span>
+                    </button>
+                    <button class="start-menu__app" data-app="contact">
+                        <div class="start-menu__app-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                                <rect x="10" y="16" width="28" height="18" rx="3" stroke="#f5c2e7" stroke-width="2" fill="none"/>
+                                <path d="M10 19l14 9 14-9" stroke="#f5c2e7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <span>Contact</span>
+                    </button>
+                    <button class="start-menu__app" data-app="resume">
+                        <div class="start-menu__app-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                                <path d="M16 10h10l8 8v20a3 3 0 01-3 3H16a3 3 0 01-3-3V13a3 3 0 013-3z" stroke="#94e2d5" stroke-width="2" fill="none"/>
+                                <path d="M26 10v8h8" stroke="#94e2d5" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <span>Resume</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="start-menu__footer">
+                <div class="start-menu__user">
+                    <img src="assets/profile.jpg" class="start-menu__avatar" style="object-fit: cover;" alt="Sean Wee">
+                    <span class="start-menu__username">Sean Wee</span>
+                </div>
+                <button class="start-menu__power" title="Power">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="taskbar" id="taskbar">
+            <div class="taskbar__center">
+                <button class="taskbar__btn taskbar__btn--start" id="start-btn" title="Start">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="3" y="3" width="8.5" height="8.5" />
+                        <rect x="12.5" y="3" width="8.5" height="8.5" />
+                        <rect x="3" y="12.5" width="8.5" height="8.5" />
+                        <rect x="12.5" y="12.5" width="8.5" height="8.5" />
+                    </svg>
+                </button>
+
+                <div class="taskbar__separator"></div>
+
+                <button class="taskbar__btn" data-app="terminal" data-tooltip="Terminal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 17l5-5-5-5"/><line x1="12" y1="17" x2="19" y2="17"/>
+                    </svg>
+                </button>
+                <button class="taskbar__btn" data-app="about" data-tooltip="About Me">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4.5"/><path d="M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8"/>
+                    </svg>
+                </button>
+                <button class="taskbar__btn" data-app="skills" data-tooltip="Skills">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                </button>
+                <button class="taskbar__btn" data-app="projects" data-tooltip="Projects">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+                    </svg>
+                </button>
+                <a href="https://github.com/WJRS2307" target="_blank" class="taskbar__btn" data-tooltip="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <button class="taskbar__btn" data-app="contact" data-tooltip="Contact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="taskbar__right">
+                <div class="taskbar__tray">
+                    <span class="taskbar__tray-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>
+                        </svg>
+                    </span>
+                    <span class="taskbar__tray-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+                        </svg>
+                    </span>
+                </div>
+                
+                <div class="taskbar__lang" title="Keyboard layout: English (United States)">
+                    ENG
+                </div>
+
+                <div class="taskbar__clock" id="taskbar-clock">
+                    <span class="taskbar__time" id="taskbar-time"></span>
+                    <span class="taskbar__date" id="taskbar-date"></span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="boot-screen" id="boot-screen" style="display: none;">
+            <div class="boot-screen__content">
+                <svg class="boot-screen__logo" width="60" height="60" viewBox="0 0 24 24" fill="#0078d4">
+                    <rect x="3" y="3" width="8.5" height="8.5" />
+                    <rect x="12.5" y="3" width="8.5" height="8.5" />
+                    <rect x="3" y="12.5" width="8.5" height="8.5" />
+                    <rect x="12.5" y="12.5" width="8.5" height="8.5" />
+                </svg>
+                <div class="boot-screen__spinner">
+                    <div class="boot-screen__dot"></div>
+                    <div class="boot-screen__dot"></div>
+                    <div class="boot-screen__dot"></div>
+                    <div class="boot-screen__dot"></div>
+                    <div class="boot-screen__dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-screen" id="login-screen">
+            <div class="login-screen__content">
+                <img src="assets/profile.jpg" class="login-screen__avatar" style="object-fit: cover; margin: 0 auto;" alt="Sean Wee">
+                <div class="login-screen__username">Sean Wee</div>
+                
+                <div class="login-screen__input-container">
+                    <div class="login-screen__input-wrapper">
+                        <input type="password" id="login-password" placeholder="Password" autocomplete="off" ref="password">
+                        <button id="login-btn" title="Sign In">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="login-screen__hint">Hint: Password is sean</div>
+                <div class="login-screen__error" id="login-error"></div>
+                
+                <div class="login-screen__loading" id="login-loading">
+                    <div class="boot-screen__spinner">
+                        <div class="boot-screen__dot"></div>
+                        <div class="boot-screen__dot"></div>
+                        <div class="boot-screen__dot"></div>
+                        <div class="boot-screen__dot"></div>
+                        <div class="boot-screen__dot"></div>
+                    </div>
+                    <div class="login-screen__welcome">Welcome</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
