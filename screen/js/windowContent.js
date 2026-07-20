@@ -4,6 +4,7 @@ import { projectsConfig } from './apps/projects.js';
 import { contactConfig } from './apps/contact.js';
 import { resumeConfig } from './apps/resume.js';
 import { terminalConfig } from './apps/terminalConfig.js';
+import { musicConfig } from './apps/music.js';
 
 export const WINDOW_CONTENT = {
     terminal: terminalConfig,
@@ -12,6 +13,7 @@ export const WINDOW_CONTENT = {
     projects: projectsConfig,
     contact: contactConfig,
     resume: resumeConfig,
+    music: musicConfig,
 };
 
 

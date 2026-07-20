@@ -17,6 +17,24 @@
             <img src="assets/wallpaper.jpg" alt="" class="wallpaper__image" draggable="false">
         </div>
 
+        <div class="desktop-icons">
+            <button class="desktop-icon" data-app="resume">
+                <svg viewBox="0 0 48 48" fill="none">
+                    <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                    <path d="M16 10h10l8 8v20a3 3 0 01-3 3H16a3 3 0 01-3-3V13a3 3 0 013-3z" stroke="#94e2d5" stroke-width="2" fill="none"/>
+                    <path d="M26 10v8h8" stroke="#94e2d5" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+                <span>Resume</span>
+            </button>
+            <button class="desktop-icon" data-app="music">
+                <svg viewBox="0 0 48 48" fill="none">
+                    <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                    <path d="M17 31.5V16.5L31 13.5V28.5M17 22L31 19M13.5 35C11.567 35 10 33.433 10 31.5C10 29.567 11.567 28 13.5 28C15.433 28 17 29.567 17 31.5V35H13.5ZM27.5 32C25.567 32 24 30.433 24 28.5C24 26.567 25.567 25 27.5 25C29.433 25 31 26.567 31 28.5V32H27.5Z" stroke="#a6e3a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span>Music</span>
+            </button>
+        </div>
+
         <div id="windows-container"></div>
 
         <div class="start-menu" id="start-menu">
@@ -89,6 +107,15 @@
                             </svg>
                         </div>
                         <span>Resume</span>
+                    </button>
+                    <button class="start-menu__app" data-app="music">
+                        <div class="start-menu__app-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="2" y="2" width="44" height="44" rx="8" fill="#1e1e2e"/>
+                                <path d="M17 31.5V16.5L31 13.5V28.5M17 22L31 19M13.5 35C11.567 35 10 33.433 10 31.5C10 29.567 11.567 28 13.5 28C15.433 28 17 29.567 17 31.5V35H13.5ZM27.5 32C25.567 32 24 30.433 24 28.5C24 26.567 25.567 25 27.5 25C29.433 25 31 26.567 31 28.5V32H27.5Z" stroke="#a6e3a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <span>Music</span>
                     </button>
                 </div>
             </div>

@@ -1,9 +1,7 @@
-/* ==========================================================================
-   Sean Wee Windows 11 Theme
-   ========================================================================== */
+
 
 :root {
-  /* Color Palette (Catppuccin Mocha inspired) */
+  
   --base: #1e1e2e;
   --mantle: #181825;
   --crust: #11111b;
@@ -31,9 +29,6 @@
   --font-mono: 'JetBrains Mono', Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
-/* ==========================================================================
-   1. Reset & Base Styling
-   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -51,9 +46,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ==========================================================================
-   2. Desktop & Wallpaper
-   ========================================================================== */
 #desktop {
   width: 100vw;
   height: 100vh;
@@ -75,11 +67,57 @@ html, body {
   height: 100%;
   object-fit: cover;
   display: block;
+  user-select: none;
 }
 
-/* ==========================================================================
-   3. Windows 11 Taskbar
-   ========================================================================== */
+.desktop-icons {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-height: calc(100vh - 80px); 
+  z-index: 10;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.desktop-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.desktop-icon svg {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.desktop-icon span {
+  font-size: 12px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 .taskbar {
   position: fixed;
   bottom: 0;
@@ -164,7 +202,6 @@ html, body {
   border-radius: 2px;
 }
 
-/* Taskbar Tooltip */
 .taskbar__btn[data-tooltip]::before {
   content: attr(data-tooltip);
   position: absolute;
@@ -260,9 +297,6 @@ html, body {
   color: var(--subtext0);
 }
 
-/* ==========================================================================
-   4. Start Menu
-   ========================================================================== */
 .start-menu {
   position: fixed;
   bottom: 56px;
@@ -438,9 +472,6 @@ html, body {
   color: var(--red);
 }
 
-/* ==========================================================================
-   5. Window System (Windows 11 Style)
-   ========================================================================== */
 .window {
   position: absolute;
   min-width: 320px;
@@ -497,7 +528,6 @@ html, body {
   transition: all 0.2s ease;
 }
 
-/* Window Titlebar */
 .window__titlebar {
   height: 36px;
   background: rgba(24, 24, 37, 0.6);
@@ -560,7 +590,6 @@ html, body {
   height: 10px;
 }
 
-/* Window Content */
 .window__content {
   flex: 1;
   overflow-y: auto;
@@ -575,7 +604,6 @@ html, body {
   padding: 0 !important;
 }
 
-/* Scrollbar Customization */
 .window__content::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -594,9 +622,6 @@ html, body {
   background: var(--surface2);
 }
 
-/* ==========================================================================
-   6. Terminal App
-   ========================================================================== */
 .terminal {
   background: #0c0c14;
   height: 100%;
@@ -646,9 +671,6 @@ html, body {
   50% { opacity: 0; }
 }
 
-/* ==========================================================================
-   7. About App
-   ========================================================================== */
 .about {
   display: flex;
   gap: 24px;
@@ -717,9 +739,6 @@ html, body {
   font-size: 14px;
 }
 
-/* ==========================================================================
-   8. Skills App
-   ========================================================================== */
 .skills {
   display: flex;
   flex-direction: column;
@@ -770,9 +789,6 @@ html, body {
   border-radius: 50%;
 }
 
-/* ==========================================================================
-   9. Projects App
-   ========================================================================== */
 .projects {
   padding: 16px;
 }
@@ -949,9 +965,6 @@ a.project-card {
   font-weight: 500;
 }
 
-/* ==========================================================================
-   10. Contact App
-   ========================================================================== */
 .contact {
   display: flex;
   flex-direction: column;
@@ -1018,9 +1031,6 @@ a.project-card {
   font-size: 11px;
 }
 
-/* ==========================================================================
-   11. Resume App
-   ========================================================================== */
 .resume-placeholder {
   display: flex;
   flex-direction: column;
@@ -1047,9 +1057,6 @@ a.project-card {
   color: var(--overlay0);
 }
 
-/* ==========================================================================
-   12. In-Page Browser App
-   ========================================================================== */
 .browser-chrome {
   display: flex;
   flex-direction: column;
@@ -1212,9 +1219,6 @@ a.project-card {
   background: rgba(137, 180, 250, 0.25);
 }
 
-/* ==========================================================================
-   13. Boot Screen (Windows 11 Spinner)
-   ========================================================================== */
 .boot-screen {
   position: fixed;
   inset: 0;
@@ -1261,9 +1265,6 @@ a.project-card {
 .boot-screen__dot:nth-child(4) { animation-delay: 0.45s; }
 .boot-screen__dot:nth-child(5) { animation-delay: 0.6s; }
 
-/* ==========================================================================
-   14. Animations
-   ========================================================================== */
 @keyframes windowOpen {
   from {
     transform: scale(0.94);
@@ -1308,11 +1309,8 @@ a.project-card {
   }
 }
 
-/* ==========================================================================
-   15. Responsive Styling
-   ========================================================================== */
 @media (max-width: 768px) {
-  /* Windows on Mobile */
+  
   .window {
     border-radius: 0 !important;
     border: none !important;
@@ -1328,14 +1326,13 @@ a.project-card {
   }
 
   .window__titlebar-buttons button {
-    width: 40px; /* Slightly smaller but touch-friendly buttons */
+    width: 40px; 
   }
 
   .window__content {
     padding: 16px;
   }
 
-  /* Start Menu */
   .start-menu {
     width: 95vw;
     max-height: 80vh;
@@ -1359,7 +1356,6 @@ a.project-card {
     padding: 10px 4px;
   }
 
-  /* About Me App */
   .about {
     flex-direction: column;
     align-items: center;
@@ -1378,13 +1374,11 @@ a.project-card {
     gap: 8px;
   }
 
-  /* Projects App */
   .projects__grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  /* Contact App */
   .contact__subtitle {
     margin-bottom: 16px;
   }
@@ -1395,7 +1389,7 @@ a.project-card {
 }
 
 @media (max-width: 480px) {
-  /* Taskbar clock/tray optimizations for narrow mobile screens */
+  
   .taskbar__date {
     display: none !important;
   }
@@ -1417,7 +1411,6 @@ a.project-card {
     right: 8px;
   }
 
-  /* login screen overlay layout scaling */
   .login-screen__avatar {
     width: 90px;
     height: 90px;
@@ -1430,9 +1423,6 @@ a.project-card {
   }
 }
 
-/* ==========================================================================
-   16. Login Screen
-   ========================================================================== */
 .login-screen {
   position: fixed;
   inset: 0;
@@ -1580,7 +1570,6 @@ a.project-card {
   font-weight: 500;
 }
 
-/* Shake Animation for incorrect password */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-8px); }
@@ -1591,9 +1580,6 @@ a.project-card {
   animation: shake 0.35s ease-in-out;
 }
 
-/* ═══════════════════════════════════════════════
-   CONTACT FORM (PREMIUM STYLING)
-   ═══════════════════════════════════════════════ */
 .contact__form {
     display: flex;
     flex-direction: column;
@@ -1631,7 +1617,7 @@ a.project-card {
 }
 
 .form-group textarea {
-    resize: none; /* Prevents breaking the window layout */
+    resize: none; 
 }
 
 .form-group input::placeholder,
@@ -1682,9 +1668,6 @@ a.project-card {
     box-shadow: 0 2px 8px rgba(137, 180, 250, 0.2);
 }
 
-/* -----------------------------------------------
-   CONTACT FORM
-   ----------------------------------------------- */
 .contact__form {
     display: flex;
     flex-direction: column;

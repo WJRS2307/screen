@@ -100,6 +100,16 @@ import { runTerminalAnimation } from './terminal.js';
         }
     }
 
+    function setupDesktopIcons() {
+        const desktopIcons = document.querySelectorAll('.desktop-icon[data-app]');
+        desktopIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                const appId = icon.dataset.app;
+                openAppWindow(appId);
+            });
+        });
+    }
+
     function openAppWindow(windowId) {
         if (WindowManager.isWindowOpen(windowId)) {
             if (WindowManager.isWindowMinimized(windowId)) {
@@ -235,6 +245,7 @@ import { runTerminalAnimation } from './terminal.js';
 
         setupTaskbar();
         setupStartMenu();
+        setupDesktopIcons();
         setupLogin();
 
         boot();
