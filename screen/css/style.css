@@ -774,7 +774,82 @@ html, body {
    9. Projects App
    ========================================================================== */
 .projects {
+  padding: 16px;
+}
+
+.projects-tabs {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+}
+
+input[name="project-tabs"] {
+  display: none;
+}
+
+.projects-tabs__nav {
+  display: flex;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.projects-tabs__nav label {
+  flex: 1;
+  text-align: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  color: var(--subtext0);
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.projects-tabs__nav label:last-child {
+  border-right: none;
+}
+
+.projects-tabs__nav label:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+#tab-web:checked ~ .projects-tabs__nav label[for="tab-web"],
+#tab-tools:checked ~ .projects-tabs__nav label[for="tab-tools"],
+#tab-games:checked ~ .projects-tabs__nav label[for="tab-games"] {
+  background: rgba(137, 180, 250, 0.1);
+  color: var(--blue);
+  box-shadow: inset 0 -2px 0 var(--blue);
+}
+
+.projects-tabs__content-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.projects-tabs__content {
+  display: none;
+  animation: fadeInTab 0.3s ease forwards;
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#tab-web:checked ~ .projects-tabs__content-wrapper #content-web,
+#tab-tools:checked ~ .projects-tabs__content-wrapper #content-tools,
+#tab-games:checked ~ .projects-tabs__content-wrapper #content-games {
+  display: block;
 }
 
 .projects__grid {
@@ -783,12 +858,18 @@ html, body {
   gap: 16px;
 }
 
+a.project-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
 .project-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, border-color 0.2s ease;
   height: 100%;
@@ -805,6 +886,26 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card__img, .project-card__pattern {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card__pattern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card:hover .project-card__img, 
+.project-card:hover .project-card__pattern {
+  transform: scale(1.05);
 }
 
 .project-card__placeholder-icon {
